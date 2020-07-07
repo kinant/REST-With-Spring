@@ -3,12 +3,10 @@ package com.baeldung.um.web.dto;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import javax.validation.constraints.Email;
 
 import com.baeldung.common.interfaces.INameableDto;
 import com.baeldung.common.persistence.model.INameableEntity;
@@ -27,6 +25,10 @@ public class UserDto implements INameableEntity, INameableDto {
     @NotNull
     @Email
     private String email;
+
+    @Min(0)
+    @Max(99)
+    private int age;
 
     private String password;
 
